@@ -26,4 +26,7 @@ io.on("connection", (socket) => {
     socket.on("redoUndo", (data) => {
         io.sockets.emit("redoUndo", data);
     });
+    socket.on("hideProperties",(data)=>{
+        io.sockets.emit("hideProperties",data);
+    })
 })
