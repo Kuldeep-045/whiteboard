@@ -33,6 +33,7 @@ canvas.addEventListener("mousedown", (e) => {
         y: e.clientY
     }
     // send data to server
+    socket.emit("hideProperties",data);
     socket.emit("beginPath", data);
 })
 canvas.addEventListener("mousemove", (e) => {
@@ -141,4 +142,7 @@ socket.on("drawStroke", (data) => {
 })
 socket.on("redoUndo", (data) => {
     undoRedoCanvas(data);
+})
+socket.on("hideProperties",(data)=>{
+    hidepProperties(data);
 })
