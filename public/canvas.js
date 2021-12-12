@@ -132,6 +132,11 @@ download.addEventListener("click", (e) => {
     a.click();
 })
 
+function hidepProperties(data)
+{
+    pencilToolCont.style.display="none";
+    eraserToolCont.style.display="none";
+}
 
 socket.on("beginPath", (data) => {
     // data -> data from server
